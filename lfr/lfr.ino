@@ -13,7 +13,7 @@
 #define ENA_1 5  // PWM pin (previously A0, corrected)
 #define ENA_2 6   // Use 4 as digital HIGH/LOW (or if needed, you can move to PWM pin 6, 9, 10, 11)
 
-int speedControl = 100; // Motor speed (0-255)
+int speedControl = 90; // Motor speed (0-255)
 
 void setup() {
     // Sensor Pins
@@ -36,7 +36,7 @@ void setup() {
 
     // Set Motor Speed
     analogWrite(ENA_1, speedControl);
-    digitalWrite(ENA_2, HIGH);  // If ENA_2 is on non-PWM pin like D4, just set HIGH for full speed
+    analogWrite(ENA_2, speedControl);  // If ENA_2 is on non-PWM pin like D4, just set HIGH for full speed
 }
 
 void loop() {
